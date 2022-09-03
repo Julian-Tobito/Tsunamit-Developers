@@ -1,6 +1,7 @@
 package logic;
 
-public class Empresa {
+public class
+Empresa {
 
     private String nombre;
     private String direccion;
