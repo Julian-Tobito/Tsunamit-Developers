@@ -13,8 +13,6 @@ public class ServicesEnterprise {
 
         listEnterprise= new ListEnterprise();
 
-        listEnterprise.addEnterprise(new Enterprise("Coca Cola", "cra 45 #13-12","3106492044",1234));
-        listEnterprise.addEnterprise(new Enterprise("AMB","cra 33 #21-34","3013509915",8987));
     }
 
     public ArrayList<Enterprise> getListEnterprise(){
@@ -26,6 +24,21 @@ public class ServicesEnterprise {
     public Enterprise findEnterprise(int nit){
 
         return listEnterprise.findEnterprise(nit);
+    }
+
+    public Enterprise addEnterprise(Enterprise enterprise){
+
+        return listEnterprise.addEnterprise(enterprise) ? enterprise:null;
+    }
+
+    public Enterprise updateEnterprise(Enterprise enterprise){
+
+        return listEnterprise.updateEnterprise(enterprise);
+    }
+
+    public Enterprise deleteEnterprise(int nit){
+
+        return  listEnterprise.deleteEnterprise(listEnterprise.findEnterprise(nit));
     }
 
 }
