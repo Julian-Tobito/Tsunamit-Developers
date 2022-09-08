@@ -6,14 +6,17 @@ public class Transaction {
     private String concept;
     private Employee user;
 
+    private int id;
+
     public Transaction() {
 
     }
 
-    public Transaction(double transaction, String concept, Employee user) {
+    public Transaction(double transaction, String concept, Employee user, int id) {
         this.transaction = transaction;
         this.concept = concept;
         this.user = user;
+        this.id=id;
     }
 
     public double getTransaction() {
@@ -40,12 +43,21 @@ public class Transaction {
         this.user = user;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
                 "transaction=" + transaction +
                 ", concept='" + concept + '\'' +
                 ", user=" + user +
+                ", id=" + id +
                 '}';
     }
 }

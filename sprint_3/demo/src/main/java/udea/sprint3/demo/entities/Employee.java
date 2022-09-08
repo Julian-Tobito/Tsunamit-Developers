@@ -2,22 +2,31 @@ package udea.sprint3.demo.entities;
 
 public class Employee {
 
+    private int id;
     private String name;
     private String email;
     private TypeRol typeRol;
-    private String nameEnterprise;
     private Enterprise enterprise;
 
     public Employee() {
 
     }
 
-    public Employee(String name, String email, TypeRol typeRol, String nameEnterprise, Enterprise enterprise) {
+    public Employee(int id, String name, String email, TypeRol typeRol, Enterprise enterprise) {
+
+        this.id=id;
         this.name = name;
         this.email = email;
         this.typeRol = typeRol;
-        this.nameEnterprise = nameEnterprise;
         this.enterprise = enterprise;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,13 +53,6 @@ public class Employee {
         this.typeRol = typeRol;
     }
 
-    public String getNameEnterprise() {
-        return nameEnterprise;
-    }
-
-    public void setNameEnterprise(String nameEnterprise) {
-        this.nameEnterprise = nameEnterprise;
-    }
 
     public Enterprise getEnterprise() {
         return enterprise;
@@ -63,10 +65,10 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", typeRol=" + typeRol +
-                ", nameEnterprise='" + nameEnterprise + '\'' +
                 ", enterprise=" + enterprise +
                 '}';
     }
