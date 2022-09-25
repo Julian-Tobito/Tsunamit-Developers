@@ -6,6 +6,9 @@ import com.crud.ProyectoEmpresa.model.Transaction;
 import com.crud.ProyectoEmpresa.service.EmployeeService;
 import com.crud.ProyectoEmpresa.service.EnterpriseService;
 import com.crud.ProyectoEmpresa.service.TransactionService;
+import com.crud.ProyectoEmpresa.service.UserService;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,16 +22,28 @@ public class ControllerViews {
     private EmployeeService employeeService;
     private TransactionService transactionService;
 
-    public ControllerViews(EnterpriseService enterpriseService, EmployeeService employeeService, TransactionService transactionService) {
+    private UserService userService;
+
+    public ControllerViews(EnterpriseService enterpriseService, EmployeeService employeeService, TransactionService transactionService, UserService userService) {
         this.enterpriseService = enterpriseService;
         this.employeeService = employeeService;
         this.transactionService = transactionService;
+        this.userService = userService;
     }
 
     @GetMapping
-    public String viewIndex(Model model){
+    public String viewIndex(Model model, @AuthenticationPrincipal OidcUser principal){
+        if(principal != null){
+            System.out.println(principal.getClaims());
+            model.addAttribute("title","Pagina Principal");
+            model.addAttribute("nick",principal.getClaims().get("nickname"));
 
-        return "index";
+
+
+            userService.saveUser(principal.getClaims());
+        }
+            return "index";
+
     }
 
     @GetMapping("/getEnterprises")
