@@ -1,0 +1,134 @@
+## SISTEMA DE VERSIONAMIENTO git
+
+## Introducción
+
+En esta guia se abordaran los siguientes temas
+
+- Qué es git
+- Por qué aprender git
+- Ejemplos
+
+>Git es un sistema de versionamiento creado por Limus Torvalds
+
+_Este texto está subrayado_
+
+**Este texto está en Negrilla**
+
+|#|Comando|Descripción|
+|-|-|-|
+|1|init|Inicializa el repositorio|
+|2|commit|Confirma cambios|
+
+## Qué es Git
+
+**Git es una herramienta que realiza una función del control de versiones de código de forma distribuida**, de la que destacamos varias características:
+
+- Es muy **potente**
+- Fue **diseñada por Linus Torvalds**
+- **No depende de un repositorio** central
+- Es **software libre**
+- Con ella podemos mantener un **historial completo** de versiones
+
+**Ahora te pasamos a detallar que significa tal comando:**
+
+- ***Attrib:** Muestra o cambia los atributos de un archivo.*
+
+- ****.\* :** todos los nombres de archivos con todas las extensiones (Ejm: amir.txt, amir.ppt, sussan.pdf, etc).*
+
+- ***/s :** Procesa archivos en subcarpetas.*
+
+- ***/d :** Procesa carpetas.*
+
+- ***r :** Archivo de solo lectura.*
+
+- ***s :** Archivo del sistema.*
+
+- ***h :** Archivo oculto*
+
+  
+
+  **EJEMPLO JAVA**
+
+  ```java
+  public class Ejemplo{
+      static public void main(String ... args){
+          
+          System.out.println("Hello World!!");
+      }
+      
+      
+  }
+  ```
+
+  Para exportar se requiere `pandoc` 
+
+  
+
+  **COMANDOS**
+
+  cd EjemploGIT  = sirve para ubicarme dentro de la carpeta ejemploGIT
+
+  mkdir aaa= sirve para crear la carpeta aaa
+
+  git status= sirve para ver el estado de la carpeta
+
+  TYPE README.md = sirve para ver el contenido de un archivo desde el cmd
+
+  git diff README.md= permite ver lo que ha cambiado en el archivo entre el área de trabajo y área de ensayo (lo que se ha agregado nuevo) Para salir de el presionar q
+
+  git add -A = agrega todos los archivos al área de ensayo
+
+  git commit -m"comentario" ARCHIVO = confirma los archivos, por lo que hace la transición del área de ensayos al repositorio
+
+  git log= permite visualizar información de los commit realizados
+
+​		git show HEAD= Se obtiene una visualización de los últimos cambios confirmados(salimos con q)
+
+​		git config --list =entrega información sobre la configuración del sistema
+
+​		git checkout HEAD README.md= elimina los últimos cambios y se queda con la última versión confirmada
+
+​		ll= sirve para ver lo que hay dentro de la carpeta
+
+git init NOMBRE= crea el repositorio
+
+nano README.md= crea el archivo README.md y permite editarlo en el editor de texto nano
+
+ctrl+x= guardar cambios en el editor de texto nano
+
+touch  source/test.txt= crea el archivo test.txt en la carpeta source
+
+ctrl + l= limpia la pantalla
+
+nano source/test.txt=sirve para colocar la ruta del archivo que quiero editar
+
+git branch= permite saber en cual rama se esta trabajando
+
+git branch develop= permite crear una nueva rama llamada develop
+
+ANTES DE PASAR A OTRA RAMA ES IMPORTANTE QUE LOS CAMBIOS ESTEN CONFIRMADOS
+
+git checkout develop= sirve para cambiar de rama, cambiamos a la rama develop
+
+COPY CON archivo.txt= sirve para crear un archivo desde la consola cmd
+
+touch uno.{1..10}=crea 10 archivos llamados uno.1, uno.2,etc
+
+DE ACUERDO A LA RAMA EN LA QUE ESTE SE MUESTRA EL CONTENIDO
+
+git merge develop= a mi rama actual la quiero mezclar con la rama develop
+
+vim README.md=permite editar el archivo (salimos con esc, luego escribimos:wq)
+
+git clone -b interfaces https://github.com/jairoArh/Mintic2022-Java.git = permite clonar el repositorio de la rama interfaces, se debe colocar la dirección del repositorio
+
+git remote -v= sirve para saber si esta asociado a algun repositorio remoto
+
+git fetch=permite revisar si se han presentado cambios en el repositorio original
+
+git push -u origin main= este solo se usa la primera vez para conectar el original que es el remoto con el local que es el main
+
+git push= permite actualizar el repositorio local desde el repositorio remoto
+
+
+
