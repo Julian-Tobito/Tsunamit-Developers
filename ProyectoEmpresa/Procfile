@@ -1,3 +1,4 @@
-heroku buildpacks:set https://github.com/heroku/heroku-buildpack-java
-web: java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar
+
+web: java -Dserver.port=$PORT -jar target/ProyectoEmpresa-0.0.1-SNAPSHOT.jar
+
 
